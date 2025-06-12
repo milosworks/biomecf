@@ -1,5 +1,4 @@
-`$Cls` where {
-    $Cls <: `class $ClassName {}`,
+`class $ClassName {}` as $Cls where {
     $Cls <: r"(?:.|\n)+\n(?:.|\n)+",
     register_diagnostic(
         span = $Cls,
