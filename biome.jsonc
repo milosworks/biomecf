@@ -1,5 +1,8 @@
 {
 	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+	"files": {
+		"includes": ["**", "!node_modules/**"]
+	},
 	"formatter": {
 		"formatWithErrors": true,
 		"indentStyle": "tab",
@@ -14,7 +17,8 @@
 			"semicolons": "asNeeded",
 			"trailingCommas": "none",
 			"quoteStyle": "single"
-		}
+		},
+		"globals": ["Bun"]
 	},
 	"assist": {
 		"actions": {
@@ -67,12 +71,16 @@
 				"noConstAssign": "error",
 				"noPrecisionLoss": "error",
 				"noUndeclaredDependencies": "error",
-				"noUndeclaredVariables": "off",
+				"noUndeclaredVariables": "on",
 				"noUnreachable": "error",
 				"useIsNan": "error",
 				"noUnusedImports": {
 					"level": "error",
 					"fix": "safe"
+				},
+				"noUnusedVariables": {
+					"level": "error",
+					"fix": "unsafe"
 				}
 			},
 			"nursery": {
