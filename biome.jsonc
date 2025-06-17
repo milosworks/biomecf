@@ -1,5 +1,5 @@
 {
-	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.0.0/schema.json",
 	"files": {
 		"includes": ["**", "!node_modules/**"]
 	},
@@ -7,7 +7,7 @@
 		"formatWithErrors": true,
 		"indentStyle": "tab",
 		"indentWidth": 4,
-		"lineWidth": 130
+		"lineWidth": 120
 	},
 	"javascript": {
 		"formatter": {
@@ -17,8 +17,7 @@
 			"semicolons": "asNeeded",
 			"trailingCommas": "none",
 			"quoteStyle": "single"
-		},
-		"globals": ["Bun"]
+		}
 	},
 	"assist": {
 		"actions": {
@@ -80,7 +79,8 @@
 				},
 				"noUnusedVariables": {
 					"level": "error",
-					"fix": "unsafe"
+					"fix": "unsafe",
+					"options": { "ignoreRestSiblings": true }
 				}
 			},
 			"nursery": {
@@ -165,7 +165,8 @@
 				},
 				"noDoubleEquals": {
 					"level": "error",
-					"fix": "safe"
+					"fix": "safe",
+					"options": { "ignoreNull": true }
 				},
 				"noEmptyBlockStatements": "error",
 				"noVar": {
