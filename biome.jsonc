@@ -29,7 +29,8 @@
 		}
 	},
 	"vcs": { "enabled": true, "clientKind": "git" },
-	"plugins": ["./plugins/no-empty-class-newline.grit"],
+	// Biome does not want to fix plugins being loaded by a config package
+	// "plugins": ["./plugins/no-empty-class-newline.grit"],
 	"linter": {
 		"rules": {
 			"recommended": true,
