@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.0.0/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.3.10/schema.json",
 	"files": {
 		"includes": ["**", "!node_modules/**"]
 	},
@@ -64,6 +64,10 @@
 				"useOptionalChain": {
 					"level": "error",
 					"fix": "safe"
+				},
+				"useIndexOf": {
+					"level": "error",
+					"fix": "safe"
 				}
 			},
 			"correctness": {
@@ -82,26 +86,20 @@
 					"level": "error",
 					"fix": "unsafe",
 					"options": { "ignoreRestSiblings": true }
+				},
+				"useJsonImportAttributes": "error",
+				"useSingleJsDocAsterisk": {
+					"fix": "safe",
+					"level": "on"
 				}
 			},
 			"nursery": {
-				"noConstantBinaryExpression": "error",
 				"noShadow": "off",
-				"noUselessEscapeInString": "error",
 				"noUselessUndefined": "error",
-				"useConsistentObjectDefinition": "error",
 				"useExhaustiveSwitchCases": {
 					"level": "error",
 					"fix": "safe"
-				},
-				"useIndexOf": {
-					"level": "error",
-					"fix": "safe"
-				},
-				"useJsonImportAttribute": "error",
-				"useNumericSeparators": "error",
-				"useObjectSpread": "error",
-				"useSingleJsDocAsterisk": "error"
+				}
 			},
 			"performance": {
 				"noAccumulatingSpread": "error",
@@ -152,9 +150,12 @@
 					"fix": "safe"
 				},
 				"useThrowNewError": "error",
-				"useTrimStartEnd": "error"
+				"useTrimStartEnd": "error",
+				"useNumericSeparators": "on",
+				"useObjectSpread": "error"
 			},
 			"suspicious": {
+				"noConstantBinaryExpressions": "error",
 				"noApproximativeNumericConstant": {
 					"level": "error",
 					"fix": "safe"
